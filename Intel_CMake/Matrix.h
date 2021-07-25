@@ -125,9 +125,7 @@ template <typename T> void print(Matrix<T>& A);
 
 // default constructor
 template <typename T> Matrix<T>::Matrix() {
-    shape[0] = 1; shape[1] = 1;
-    data = new T * [1];
-    data[0] = new T[1];
+    shape[0] = 0; shape[1] = 0;
 }
 
 // parameterized constructor(s)

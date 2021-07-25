@@ -11,6 +11,7 @@ template <typename T>
 Matrix<T> compute_grad(Matrix<T>& A, Matrix<T>& B, Matrix<T>& C) {
     Matrix<T> _A = A;
     Matrix<T> _B = B;
+    Matrix<T> theta = C;
     int numIterations = 100000;
     double alpha = 0.0005;
     int m = _A.shape[0];
@@ -18,7 +19,6 @@ Matrix<T> compute_grad(Matrix<T>& A, Matrix<T>& B, Matrix<T>& C) {
     Matrix<T> hypothesis;
     Matrix<T> loss;
     Matrix<T> AT(transpose(_A));
-    Matrix<T> theta = C;
 
     for (int i = 0; i < numIterations; i++) {
         hypothesis = _A * theta;
